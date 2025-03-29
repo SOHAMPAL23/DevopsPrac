@@ -1,0 +1,23 @@
+pipeline {
+    stages {
+        stage('Install Dependencies ') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Run tests'){
+            steps{
+                sh 'npm test'
+            }
+            steps{
+                echo "No tests defined"
+            }
+        }
+
+        stage('Build the application using the command:' ){
+            steps{
+                sh 'npm run build' 
+            }
+        }
+    }
+}
